@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block title_head %}
+<title> SuperHeroe</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+<h1>Tu super heroe</h2>
+{% endblock h1_header %}
+
+{% block contenido %}
+<form action= {% url 'inicio:crear_superheroe' %} method="POST">
+    {% csrf_token %} 
+    <table>
+        {{formulario}}
+    </table>
+    <button>Enviar</button>
+</form>
+{% endblock contenido %}
+
+
+
+

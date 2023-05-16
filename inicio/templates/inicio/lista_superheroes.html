@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+
+{% block title_head %}
+<title> Super Heroe</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+<h1>Listado de Super Heroes</h1>
+{% endblock h1_header %}
+
+{% block contenido %}
+{% comment %} 
+<p>
+    <form action={% url "inicio:listar_superheroes" %}>
+        {{formulario}}
+        <button>Buscar</button>
+    </form>
+</p> {% endcomment %}
+
+{% if object_list %}
+<ul>
+    {% for superheroe in object_list %}
+    <li><a href= {% url 'inicio:detalle_superheroe' superheroe.id %}></a>{{superheroe}}</li>
+    <a href= {% url 'inicio:modificar_superheroe' superheroe.id %}>Modificar</a>
+    <a href= {% url 'inicio:eliminar_superheroe' superheroe.id %}>Eliminar</a>
+    {% endfor %}
+</ul>
+
+{% else %}
+    <h3> No hay datos de superheroes cargados </h3>
+{% endif %}
+
+
+
+
+{% comment %} {% if superheroes %}
+{% for superheroe in superheroes %}
+<li><a href= {% url 'inicio:detalle_superheroe' superheroe.id %}></a>{{superheroe}}</li>
+    <a href= {% url 'inicio:modificar_superheroe' superheroe.id %}>Modificar</a>
+    <a href= {% url 'inicio:eliminar_superheroe' superheroe.id %}>Eliminar</a> {% endcomment %}
+{% comment %}<li>
+    Nombre: {{superheroe.nombre}}    - 
+    Super Poder: {{superheroe.superpoder}}    - 
+    Motivo: {{superheroe.motivo}}    - 
+    Autor: {{superheroe.autor}}
+    {% comment %} {{superheroe}} {% endcomment %}
+{% comment %}</li> 
+{% endfor %}    
+
+{% else %}
+    <h1> No hay datos de superheroes cargados </h1>
+{% endif %}{% endcomment %}
+{% endblock contenido %}
+
+
+

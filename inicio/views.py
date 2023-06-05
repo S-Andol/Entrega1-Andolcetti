@@ -7,7 +7,7 @@ from inicio.forms import CreacionSuperHereoFormulario,BuscarSuperHeroe
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView  
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def mi_vista(request):
     return render(request,'inicio/index.html')
@@ -64,14 +64,16 @@ class SuperHeroeCreateView(CreateView):
     fields = ['nombre','superpoder','motivo','autor']
     success_url = '/inicio/superheroes/'
 
-class SuperHeroeUpdateView(UpdateView):
+
+# Siempre los mixins van por delante...
+class SuperHeroeUpdateView(LoginRequiredMixin, UpdateView):
     model = SuperHeroe
     template_name = "inicio/modificar_superheroe.html"
     fields = ['nombre','superpoder','motivo','autor']
     success_url = '/inicio/superheroes/'
 
 
-class SuperHeroeDeleteView(DeleteView):
+class SuperHeroeDeleteView(LoginRequiredMixin, DeleteView):
     model = SuperHeroe
     template_name = "inicio/eliminar_superheroe.html"
     success_url = '/inicio/superheroes/'

@@ -13,6 +13,7 @@
 <form action= {% url 'inicio:modificar_superheroe' superheroe.id %} method="POST">
     {% csrf_token %} 
     <table>
+        {{form.media}}
         {{form}}
     </table>
     <button>Modificar</button>

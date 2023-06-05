@@ -13,6 +13,7 @@
 <form action= {% url 'inicio:crear_superheroe' %} method="POST">
     {% csrf_token %} 
     <table>
+        {{form.media}}
         {{form}}
     </table>
     <button>Enviar</button>

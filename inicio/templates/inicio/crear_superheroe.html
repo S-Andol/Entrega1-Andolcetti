@@ -2,18 +2,18 @@
 
 
 {% block title_head %}
-<title> SuperHeroe</title>
+<title> Crear Super Heroe</title>
 {% endblock title_head %}
 
 {% block h1_header %}
-<h1>Tu super heroe</h2>
+<h1>Crea tu super heroe</h2>
 {% endblock h1_header %}
 
 {% block contenido %}
 <form action= {% url 'inicio:crear_superheroe' %} method="POST">
     {% csrf_token %} 
     <table>
-        {{formulario}}
+        {{form}}
     </table>
     <button>Enviar</button>
 </form>

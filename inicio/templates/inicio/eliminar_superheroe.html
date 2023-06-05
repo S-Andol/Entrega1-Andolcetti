@@ -12,8 +12,8 @@
 {% block contenido %}
 <form action= {% url 'inicio:eliminar_superheroe' superheroe.id %} method="POST">
     {% csrf_token %} 
-    <h3>¿Quiere eliminar al Super Heroe{{superheroe}}?</h3>
-    <button>Eliminar</button>
+    <h3>¿Quiere eliminar al Super Heroe {{superheroe}}?</h3>
+    <button>Si, eliminar</button>
 </form>
 {% endblock contenido %}
 

@@ -23,9 +23,9 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'inicio:inicio' %}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'inicio:crear_superheroe' %}">Crear Super Heroe</a>
+                {% comment %} <a class="navbar-brand" href="{% url 'inicio:crear_superheroe' %}">Crear Super Heroe</a> {% endcomment %}
                 <a class="navbar-brand" href="{% url 'inicio:listar_superheroes' %}">Lista de Super Heroe</a>
-                <a class="btn btn-primary" href="#signup">Sign Up</a>
+                {% comment %} <a class="btn btn-primary" href="#signup">Sign Up</a> {% endcomment %}
             </div>
         </nav>
         <!-- Masthead-->

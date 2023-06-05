@@ -2,7 +2,7 @@
 
 
 {% block title_head %}
-<title> Super Heroe</title>
+<title>Super Heroe</title>
 {% endblock title_head %}
 
 {% block h1_header %}
@@ -16,12 +16,10 @@
     <li>Motivo: {{superheroe.motivo}}</li>
     <li>Autor: {{superheroe.autor}}</li>
 </ul>
-<a href= {% url 'inicio:modificar_superheroe' superheroe.id %}>Modificar</a>
+<a href= {% url 'inicio:modificar_superheroe' superheroe.id %}>Modificar</a> -    
     <a href= {% url 'inicio:eliminar_superheroe' superheroe.id %}>Eliminar</a>
 
 
 
 
 {% endblock contenido %}
-{% endfor %}
-{% endif %}

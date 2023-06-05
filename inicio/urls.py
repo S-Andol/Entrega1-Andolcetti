@@ -7,13 +7,13 @@ app_name = 'inicio'
 urlpatterns = [ 
     
     path ('', views.mi_vista, name = 'inicio'),
-    
-    path('crear-superheroe/', views.crear_superheroe, name = 'crear_superheroe'),
-    path('superheroes/', views.lista_superheroes, name = 'listar_superheroes'),
-    path('superheroes/<int:pk>/', views.SuperHeroeDetailView.as_view, name = 'detalle_superheroes'),
-    path('superheroes/<int:pk>/modificar/', views.SuperHeroeUpdateView.as_view, name = 'modificar_superheroes'),
-    path('superheroes/<int:pk>/eliminar/', views.SuperHeroeDeleteView.as_view , name = 'eliminar_superheroes'),
     path('sobre-mi/', views.sobre_mi, name = 'sobre_mi'),
+    path('superheroes/', views.SuperHeroeListView.as_view(), name = 'listar_superheroes'),
+    path('superheroes/crear/', views.SuperHeroeCreateView.as_view(), name = 'crear_superheroe'),
+    
+    path('superheroes/<int:pk>/', views.SuperHeroeDetailView.as_view(), name = 'detalle_superheroe'),
+    path('superheroes/<int:pk>/modificar/', views.SuperHeroeUpdateView.as_view(), name = 'modificar_superheroe'),
+    path('superheroes/<int:pk>/eliminar/', views.SuperHeroeDeleteView.as_view() , name = 'eliminar_superheroe'),
     
 
     

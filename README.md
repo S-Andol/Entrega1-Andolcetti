@@ -169,8 +169,11 @@ De esta manera lo vamos a poder modificar tras bambalinas (?)
 # RECORDAR AL INICIAR
 . venv/Scripts/activate
 y de ser necesario...
-python manage.py migrate
 
 # Cuando Modificamos algo en models
 Terminamos de modificar y colocamos por pantalla
 python manage.py makemigrations
+
+
+
+PARTE DE USUARIO - ULTIMA CLASE 1:08:00

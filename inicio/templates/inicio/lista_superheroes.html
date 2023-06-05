@@ -18,17 +18,18 @@
     </form>
 </p> {% endcomment %}
 
+<a href={% url 'inicio:crear_superheroe' %}>Crear Super Heroe</a>
+
 {% if object_list %}
 <ul>
     {% for superheroe in object_list %}
-    <li><a href= {% url 'inicio:detalle_superheroe' superheroe.id %}></a>{{superheroe}}</li>
-    <a href= {% url 'inicio:modificar_superheroe' superheroe.id %}>Modificar</a>
-    <a href= {% url 'inicio:eliminar_superheroe' superheroe.id %}>Eliminar</a>
+    <li><a href= {% url 'inicio:detalle_superheroe' superheroe.id %}>{{superheroe}}</a></li>
+    <a href= {% url 'inicio:modificar_superheroe' superheroe.id %}>Modificar</a> . <a href= {% url 'inicio:eliminar_superheroe' superheroe.id %}>Eliminar</a>
     {% endfor %}
 </ul>
 
 {% else %}
-    <h3> No hay datos de superheroes cargados </h3>
+    <h3> No hay datos de superheroes cargados.</h3>
 {% endif %}
 
 
